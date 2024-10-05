@@ -12,11 +12,14 @@
     "@sanity/icons": "^3.4.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.59.1",
+    "algoliasearch": "^5.7.0",
     "next": "14.2.14",
     "next-sanity": "^9.5.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-instantsearch": "^7.13.2",
     "sanity": "^3.59.1",
+    "sanity-algolia": "^1.1.0",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {

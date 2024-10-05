@@ -1,10 +1,17 @@
 import { createClient } from 'next-sanity'
 
-import { apiVersion, dataset, projectId } from '../env'
+import { algoliaApiKey, algoliaAppId, apiVersion, dataset, projectId } from '../env'
+import { algoliasearch } from 'algoliasearch'
 
-export const client = createClient({
+export const SanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  useCdn: true,
 })
+
+export const AlgoliaClient:any = algoliasearch(
+  algoliaAppId,
+  algoliaApiKey
+)
+
