@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { AlgoliaClient } from '@/sanity/lib/client';
-import { Hits, InstantSearch, RefinementList, SearchBox } from 'react-instantsearch';
+import { Hits, InstantSearch, SearchBox } from 'react-instantsearch';
 
 type AlgoliaRecord = {
   hit: {
@@ -32,7 +32,7 @@ type AlgoliaRecord = {
 };
 
 const Hit = ({ hit }: AlgoliaRecord) => {
-  const { firstname, lastname, zip_code, _highlightResult } = hit;
+  const {  lastname, zip_code, _highlightResult } = hit;
 
   return (
     <tr className='grid grid-cols-4 w-full'>
