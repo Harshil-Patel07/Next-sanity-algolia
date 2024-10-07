@@ -2,27 +2,9 @@ import { AlgoliaClient, SanityClient } from "@/sanity/lib/client";
 import { NextRequest, NextResponse } from "next/server";
 import indexer from "sanity-algolia";
 
-async function readRequestBody(request: NextRequest) {
-  const reader = request.body?.getReader();
-  const chunks = [];
-  let done = false;
-
-  if (reader) {
-    while (!done) {
-      const { done: readerDone, value } = await reader.read();
-      done = readerDone;
-      if (value) {
-        chunks.push(value);
-      }
-    }
-    const body = Buffer.concat(chunks);
-    return JSON.parse(body.toString());
-  }
-
-  return {};
-}
 
 export  async function POST(req: NextRequest) {
+
   const sanityAlgolia = indexer(
     {
       post: {
@@ -38,8 +20,8 @@ export  async function POST(req: NextRequest) {
   );
 
   try {
-    const requestBody = await readRequestBody(req);
-    await sanityAlgolia.webhookSync(SanityClient, requestBody);
+ 
+    await sanityAlgolia.webhookSync(SanityClient, await req?.body);
     console.log('Synced successfully');
     return new NextResponse('OK', { status: 200 });
   } catch (error) {

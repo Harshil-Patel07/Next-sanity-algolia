@@ -12,12 +12,12 @@ export const projectId = assertValue(
 )
 
 export const algoliaAppId = assertValue(
-  process.env.NEXT_PUBLIC_APP_ID,
+  process.env.NEXT_PUBLIC_APP_ID || "B7RGPVKO97",
   'Missing environment variable: NEXT_PUBLIC_APP_ID'
 )
 
 export const algoliaApiKey = assertValue(
-  process.env.NEXT_PUBLIC_ALGOLIA_WRITE_API_KEY,
+  process.env.NEXT_PUBLIC_ALGOLIA_WRITE_API_KEY || "f7fda8fa379711dadea3382237876069",
   'Missing environment variable: NEXT_PUBLIC_ALGOLIA_WRITE_API_KEY'
 )
 

@@ -7,10 +7,11 @@ import { defineCliConfig } from 'sanity/cli'
 const projectId = "2ft7a5xu"
 const dataset = "production"
 
-export default defineCliConfig({ api: { 
-    projectId,
-     dataset
-     } ,
-     studioHost:"next-algolia",
-     
-    })
+export default defineCliConfig({
+    api: {
+        projectId,
+        dataset
+    },
+    studioHost: "next-algolia",
+
+})
