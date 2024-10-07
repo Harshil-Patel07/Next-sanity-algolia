@@ -1,7 +1,9 @@
+"use client"
+
 import { createClient } from 'next-sanity'
 
 import { algoliaApiKey, algoliaAppId, apiVersion, dataset, projectId } from '../env'
-import { algoliasearch } from 'algoliasearch'
+import { algoliasearch, searchClient } from 'algoliasearch'
 
 export const SanityClient = createClient({
   projectId,
@@ -14,4 +16,3 @@ export const AlgoliaClient:any = algoliasearch(
   algoliaAppId,
   algoliaApiKey
 )
-

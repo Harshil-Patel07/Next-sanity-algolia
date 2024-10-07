@@ -17,8 +17,8 @@ export const algoliaAppId = assertValue(
 )
 
 export const algoliaApiKey = assertValue(
-  process.env.NEXT_PUBLIC_SEARCH_API_KEY,
-  'Missing environment variable: NEXT_PUBLIC_SEARCH_API_KEY'
+  process.env.NEXT_PUBLIC_ALGOLIA_WRITE_API_KEY,
+  'Missing environment variable: NEXT_PUBLIC_ALGOLIA_WRITE_API_KEY'
 )
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
