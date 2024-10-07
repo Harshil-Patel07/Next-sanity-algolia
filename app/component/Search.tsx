@@ -3,10 +3,11 @@ import React from 'react';
 
 import { AlgoliaClient } from '@/sanity/lib/client';
 import { Hits, InstantSearch, RefinementList, SearchBox } from 'react-instantsearch';
+import { AlgoliaRecord } from 'sanity-algolia/dist/types';
 
 
 
-const Hit = ({ hit }: any) => (
+const Hit = ({ hit }: AlgoliaRecord) => (
   <div>
     <h2>{hit.title}</h2>
     <p>{hit.excerpt}</p>
